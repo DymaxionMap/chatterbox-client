@@ -14,6 +14,21 @@ var App = {
     // Fetch initial batch of messages
     App.startSpinner();
     App.fetch(App.stopSpinner);
+    
+    // TEMPORARY to check out how to GET from server
+    $.ajax({
+    // This is the url you should use to communicate with the parse API server.
+      url: 'http://parse.sfm6.hackreactor.com/chatterbox/classes/messages',
+      type: 'GET',
+      contentType: 'application/json',
+      success: function (data) {
+        console.log(data);
+      },
+      error: function (data) {
+        // See: https://developer.mozilla.org/en-US/docs/Web/API/console.error
+        console.error('chatterbox: Failed');
+      }
+    });
 
   },
 
