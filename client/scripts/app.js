@@ -16,6 +16,9 @@ var App = {
     App.fetch(function () {
       App.stopSpinner();
       MessagesView.render();
+      Rooms.rooms = RoomController.findRooms(Messages.results);
+      // console.log('Rooms.rooms: ', Rooms.rooms);
+      RoomsView.render();
     });
     
   },

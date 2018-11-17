@@ -20,8 +20,19 @@ var MessagesView = {
     // For each message object
     //   Create a new messageView
     // var templateView = MessageView.render;
-    console.log(Messages.results);
-    Messages.results.forEach(MessagesView.renderMessage);
+    var messages;
+    if (Rooms.selectedRoom === '') {
+      messages = Messages.results;
+    } else {
+      messages = Messages.results
+        .filter((message) => {
+          return message.roomname !== undefined;
+        })
+        .filter((message) => {
+          return message.roomname.trim() === Rooms.selectedRoom.trim();
+        });
+    }
+    messages.forEach(MessagesView.renderMessage);
   }
 
 };

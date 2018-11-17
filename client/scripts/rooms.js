@@ -1,6 +1,6 @@
 var Rooms = {
-
-
+  rooms: [],
+  selectedRoom: ''
 };
 
 // Messages.results.filter((message) => {
