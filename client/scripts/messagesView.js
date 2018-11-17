@@ -33,6 +33,10 @@ var MessagesView = {
         });
     }
     messages.forEach(MessagesView.renderMessage);
+  },
+  
+  clearMessages: function() {
+    $('.chat').remove();
   }
 
 };

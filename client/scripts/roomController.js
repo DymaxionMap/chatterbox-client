@@ -20,6 +20,7 @@ var RoomController = {
     event.preventDefault();
     Rooms.selectedRoom = $('#rooms select option:selected').text();
     console.log('room selection: ', Rooms.selectedRoom);
+    MessagesView.clearMessages();
     MessagesView.render();
   }
 
