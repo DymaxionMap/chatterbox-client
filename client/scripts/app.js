@@ -25,6 +25,12 @@ var App = {
       // examine the response from the server request:
       Messages = data;
       console.log('Response: ', Messages);
+      
+      var filteredMsg = Messages.results.filter((message) => {
+        return message.roomname === 'TEST';
+      });
+      
+      console.log('filteredMsg: ', filteredMsg);
       callback();
     });
   },

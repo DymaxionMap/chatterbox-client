@@ -5,8 +5,13 @@ var RoomsView = {
 
   initialize: function() {
   },
-
+  
+  renderRoom: function(room) {
+    
+  },
+  
   render: function() {
+    
   }
 
 };
