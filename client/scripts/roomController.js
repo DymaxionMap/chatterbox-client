@@ -12,11 +12,6 @@ var RoomController = {
   },
   
   selectRoom: function (event) {
-    // $('#myOptions').change(function() {
-    //     var val = $("#myOptions option:selected").text();
-    //     alert(val);
-    // });
-
     event.preventDefault();
     Rooms.selectedRoom = $('#rooms select option:selected').text().trim();
     console.log('room selection: ', Rooms.selectedRoom);

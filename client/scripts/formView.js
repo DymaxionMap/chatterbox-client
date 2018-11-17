@@ -16,7 +16,7 @@ var FormView = {
     var message = {
       username: App.username,
       text: text,
-      roomname: Rooms.selectedRoom
+      roomname: (Rooms.selectedRoom === 'All rooms') ? undefined : Rooms.selectedRoom
     };
     
     console.log('message: ', message);

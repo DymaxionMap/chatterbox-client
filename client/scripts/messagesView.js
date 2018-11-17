@@ -12,7 +12,10 @@ var MessagesView = {
       createdAt: _.escape(message.createdAt),
       updatedAt: _.escape(message.updatedAt)
     });
-    MessagesView.$chats.append(escapedHtml);
+    // MessagesView.$chats.append(escapedHtml);
+    $(escapedHtml).appendTo(MessagesView.$chats)
+      .find('.username')
+      .on('click', FriendController.addFriend);
   },
 
   render: function() {
