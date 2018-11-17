@@ -12,7 +12,10 @@ var MessagesView = {
     var templateView = MessageView.render;
     Messages.results.forEach((function (message) {
       var escapedHtml = templateView({
-        username: _.escape(message.username)
+        username: _.escape(message.username),
+        text: _.escape(message.text),
+        createdAt: _.escape(message.createdAt),
+        updatedAt: _.escape(message.updatedAt)
       });
       this.$chats.append(escapedHtml);
     }).bind(this));
