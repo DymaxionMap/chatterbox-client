@@ -9,7 +9,19 @@ var FormView = {
   handleSubmit: function(event) {
     // Stop the browser from submitting the form
     event.preventDefault();
+    console.log('event: ', event);
+    // var text = $('#DynamicValueAssignedHere').find('input[name="FirstName"]').val();
+    var text = FormView.$form.find('input[type=text]').val();
     
+    var message = {
+      username: App.username,
+      text: text,
+      roomname: 'sleep101'
+    };
+    
+    console.log('message: ', message);
+    
+    Parse.create(message);
     console.log('click!');
   },
 
@@ -19,3 +31,4 @@ var FormView = {
   }
 
 };
+

@@ -5,7 +5,7 @@ var App = {
   username: 'anonymous',
 
   initialize: function() {
-    App.username = window.location.search.substr(10);
+    App.username = window.location.search.substr(10).replace(/%20/g, " ");
 
     FormView.initialize();
     RoomsView.initialize();
@@ -24,7 +24,7 @@ var App = {
     Parse.readAll((data) => {
       // examine the response from the server request:
       Messages = data;
-      // console.log(data);
+      console.log('Response: ', Messages);
       callback();
     });
   },
