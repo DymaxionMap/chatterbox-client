@@ -21,12 +21,12 @@ var MessagesView = {
     //   Create a new messageView
     // var templateView = MessageView.render;
     var messages;
-    if (Rooms.selectedRoom === '') {
+    if (Rooms.selectedRoom === 'All rooms') {
       messages = Messages.results;
     } else {
       messages = Messages.results
         .filter((message) => {
-          return message.roomname !== undefined;
+          return !!message.roomname; 
         })
         .filter((message) => {
           return message.roomname.trim() === Rooms.selectedRoom.trim();

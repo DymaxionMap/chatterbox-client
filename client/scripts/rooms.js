@@ -1,8 +1,4 @@
 var Rooms = {
   rooms: [],
-  selectedRoom: ''
+  selectedRoom: 'All rooms'
 };
-
-// Messages.results.filter((message) => {
-//   return message.roomname === 'sleep101';
-// });

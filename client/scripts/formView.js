@@ -16,7 +16,7 @@ var FormView = {
     var message = {
       username: App.username,
       text: text,
-      roomname: 'sleep101'
+      roomname: Rooms.selectedRoom
     };
     
     console.log('message: ', message);

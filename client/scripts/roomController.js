@@ -18,10 +18,22 @@ var RoomController = {
     // });
 
     event.preventDefault();
-    Rooms.selectedRoom = $('#rooms select option:selected').text();
+    Rooms.selectedRoom = $('#rooms select option:selected').text().trim();
     console.log('room selection: ', Rooms.selectedRoom);
     MessagesView.clearMessages();
     MessagesView.render();
+  },
+  
+  addRoom: function(event) {
+    event.preventDefault();
+    var promptMessage = 'Please enter your new room name';
+    var newRoomName = prompt(promptMessage);
+    console.log('newRoomName: ', newRoomName);
+    
+    if (!!newRoomName ) {
+      newRoomName = newRoomName.trim();
+      Rooms.rooms.push(_.escape(newRoomName));  
+      RoomsView.renderRoom(newRoomName);
+    }
   }
-
 };
