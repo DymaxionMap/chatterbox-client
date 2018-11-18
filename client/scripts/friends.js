@@ -1,4 +1,7 @@
 var Friends = {
-  friends: new Set()
-
+  friends: new Set(),
+  
+  toggleStatus: function (event) {
+    FriendController.toggleStatus(event);
+  }
 };

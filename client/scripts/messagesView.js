@@ -15,7 +15,7 @@ var MessagesView = {
     // MessagesView.$chats.append(escapedHtml);
     $(escapedHtml).appendTo(MessagesView.$chats)
       .find('.username')
-      .on('click', FriendController.addFriend);
+      .on('click', Friends.toggleStatus);
   },
 
   render: function() {

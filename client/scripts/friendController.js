@@ -1,9 +1,13 @@
 var FriendController = {
-  addFriend: function (event) {
+  toggleStatus: function (event) {
     event.preventDefault();
     var userName = event.currentTarget.innerText;
     if (!!userName) {
-      Friends.friends.add(userName.trim());
+      if (Friends.friends.has(userName)) {
+        Friends.friends.delete(userName.trim());
+      } else {
+        Friends.friends.add(userName.trim());
+      }
     } 
   }
 };
