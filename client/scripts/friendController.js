@@ -2,11 +2,16 @@ var FriendController = {
   toggleStatus: function (event) {
     event.preventDefault();
     var userName = event.currentTarget.innerText;
+    // console.log(userName);
     if (!!userName) {
+      console.log(userName);
+      userName = userName.trim();
       if (Friends.friends.has(userName)) {
-        Friends.friends.delete(userName.trim());
+        MessagesView.unhighlightFriends();
+        Friends.friends.delete(userName);
       } else {
-        Friends.friends.add(userName.trim());
+        Friends.friends.add(userName);
+        MessagesView.highlightFriends();
       }
     } 
   }

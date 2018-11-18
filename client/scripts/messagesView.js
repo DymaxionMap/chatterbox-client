@@ -5,6 +5,24 @@ var MessagesView = {
   initialize: function() {
   },
   
+  highlightFriends: function () {
+    $('.username').each(function () {
+      let username = this.innerText;
+      if (!!username && Friends.friends.has(username.trim())) {
+        $(this).addClass('friend');
+      }
+    });
+  },
+
+  unhighlightFriends: function () {
+    $('.username').each(function () {
+      let username = this.innerText;
+      if (!!username && Friends.friends.has(username.trim())) {
+        $(this).removeClass('friend');
+      }
+    });
+  },
+
   renderMessage: function(message) {
     var escapedHtml = MessageView.render({
       username: _.escape(message.username),
@@ -12,7 +30,7 @@ var MessagesView = {
       createdAt: _.escape(message.createdAt),
       updatedAt: _.escape(message.updatedAt)
     });
-    // MessagesView.$chats.append(escapedHtml);
+
     $(escapedHtml).appendTo(MessagesView.$chats)
       .find('.username')
       .on('click', Friends.toggleStatus);
