@@ -41,6 +41,8 @@ var MessagesView = {
     // For each message object
     //   Create a new messageView
     // var templateView = MessageView.render;
+    MessagesView.clearMessages();
+    console.log('inside MessagesView.render');
     var messages;
     if (Rooms.selectedRoom === 'All rooms') {
       messages = Messages.results;

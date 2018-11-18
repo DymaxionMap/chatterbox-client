@@ -21,7 +21,16 @@ var FormView = {
     
     console.log('message: ', message);
     
-    Parse.create(message);
+    var createSuccess = function () {
+      console.log('Successfully created message: ', message);
+      App.fetch();
+    };
+    
+    var createError = function () {
+      console.error('Failed to create message');
+    };
+    
+    Parse.create(message, createSuccess, createError);
     console.log('click!');
   },
 

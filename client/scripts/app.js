@@ -15,12 +15,12 @@ var App = {
     App.startSpinner();
     App.fetch(function () {
       App.stopSpinner();
-      MessagesView.render();
-      Rooms.rooms = RoomController.findRooms(Messages.results);
-      // console.log('Rooms.rooms: ', Rooms.rooms);
-      RoomsView.render();
+      // MessagesView.render();
+      // Rooms.rooms = RoomController.findRooms(Messages.results);
+      // RoomsView.render();
     });
     
+    setInterval(App.fetch, 3000);
   },
 
   fetch: function(callback = ()=>{}) {
@@ -29,11 +29,9 @@ var App = {
       Messages = data;
       console.log('Response: ', Messages);
       
-      var filteredMsg = Messages.results.filter((message) => {
-        return message.roomname === 'TEST';
-      });
-      
-      console.log('filteredMsg: ', filteredMsg);
+      MessagesView.render();
+      Rooms.rooms = RoomController.findRooms(Messages.results);
+      RoomsView.render();
       callback();
     });
   },
